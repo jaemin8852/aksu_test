@@ -22,6 +22,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+//회원가입
+const bodyParser = require('body-parser');
+
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
