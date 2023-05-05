@@ -12,10 +12,10 @@ router.get('/connectsql', function(req,res,next){
     var db_config = require('../.settings')
     const mysql      = require('mysql');
 const connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'woals9430',
-  database : 'my_db'
+  host     : 'db_config.host',
+  user     : 'db_config.user',
+  password : 'db_config.password',
+  database : 'db_config.database'
 });
 
 connection.connect();
